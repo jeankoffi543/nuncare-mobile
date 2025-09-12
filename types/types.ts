@@ -1,7 +1,8 @@
 import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 
 export type RootStackParamList = {
-  StartPageOne: undefined;
+  StartPageOneScreen: undefined;
+  StartPageTwoScreen: undefined;
 };
 
 export type ScreenOptions = {

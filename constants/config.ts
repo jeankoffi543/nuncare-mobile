@@ -4,6 +4,11 @@ import { ScreenOptions } from '../types/types';
 export const options: ScreenOptions = {
   startPageOne: {
     headerShown: false,
+    animation: 'slide_from_right',
+  },
+  startPageTwo: {
+    headerShown: false,
+    animation: 'slide_from_left',
   },
 };
 

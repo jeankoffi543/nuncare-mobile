@@ -4,39 +4,36 @@ import { IMAGES } from '../constants/images';
 import { SCREEN_WIDTH } from '../constants/config';
 import Button from '../components/button';
 
-type Props = {
-  navigation: any;
-};
-const StartPageOneScreen: React.FC<Props> = ({ navigation }) => {
+const StartPageTwoScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.mapContainer}>
-        <Image source={IMAGES.MAP_FRAME} style={styles.map} alt="Nucare Logo" />
+        <Image
+          source={IMAGES.PAGE_TWO_FRAME}
+          style={styles.map}
+          alt="Nucare Logo"
+        />
       </View>
 
       <View style={styles.descriptionContainer}>
         <Text style={styles.description}>
-          Bienvenue sur NunCare {'\n'} Trouver une pharmacie de garde rapidement
+          Vérifier vos{'\n'}médicament {'\n'} assuré
         </Text>
+
         <Image
-          source={IMAGES.PAGE_ONE_INDICATOR}
+          source={IMAGES.PAGE_TWO_INDICATOR}
           alt="Nucare Page one indicator"
         />
       </View>
 
       <View style={styles.buttonContainer}>
-        <Button
-          title="Commencer"
-          onPress={() => {
-            navigation.navigate('StartPageTwoScreen');
-          }}
-        />
+        <Button title="Commencer" onPress={() => {}} />
       </View>
     </View>
   );
 };
 
-export default StartPageOneScreen;
+export default StartPageTwoScreen;
 
 const styles = StyleSheet.create({
   container: {
