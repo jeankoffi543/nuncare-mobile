@@ -14,6 +14,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootStackParamList } from './types/types';
 import StartPageOneScreen from './screens/StartPageOneScreen';
 import { options } from './constants/config';
+import StartPageTwoScreen from './screens/StartPageTwoScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -31,8 +32,14 @@ function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="StartPageOne"
+            name="StartPageOneScreen"
             component={StartPageOneScreen}
+            options={options.startPageOne}
+          />
+
+          <Stack.Screen
+            name="StartPageTwoScreen"
+            component={StartPageTwoScreen}
             options={options.startPageOne}
           />
         </Stack.Navigator>
