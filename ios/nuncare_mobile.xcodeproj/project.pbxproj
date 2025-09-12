@@ -49,6 +49,8 @@
 		E4D596EFF299482EA7D90701 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE2392FA3869405AA4ADD6FD /* Poppins-Thin.ttf */; };
 		8C71EC8736DB4212B52E2E52 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9126175C90D74AA8B370444A /* Poppins-ThinItalic.ttf */; };
 		FC06450979564A32B28D51A8 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A6BEDDD757246E9ACDF5E4F /* OFL.txt */; };
+		02B5063F21814D50ADD87147 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4017C0F2AE6448A4BE4F4E62 /* BootSplash.storyboard */; };
+		A9265837673243ECB3F8DF96 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16326102509E4B8CA2FCA0F6 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,8 @@
 		AE2392FA3869405AA4ADD6FD /* Poppins-Thin.ttf */ = {isa = PBXFileReference; name = "Poppins-Thin.ttf"; path = "../assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9126175C90D74AA8B370444A /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Poppins-ThinItalic.ttf"; path = "../assets/fonts/Poppins-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1A6BEDDD757246E9ACDF5E4F /* OFL.txt */ = {isa = PBXFileReference; name = "OFL.txt"; path = "../assets/fonts/OFL.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4017C0F2AE6448A4BE4F4E62 /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "nuncare_mobile/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		16326102509E4B8CA2FCA0F6 /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "nuncare_mobile/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				4017C0F2AE6448A4BE4F4E62 /* BootSplash.storyboard */,
+				16326102509E4B8CA2FCA0F6 /* Colors.xcassets */,
 			);
 			name = nuncare_mobile;
 			sourceTree = "<group>";
@@ -320,6 +326,8 @@
 				E4D596EFF299482EA7D90701 /* Poppins-Thin.ttf in Resources */,
 				8C71EC8736DB4212B52E2E52 /* Poppins-ThinItalic.ttf in Resources */,
 				FC06450979564A32B28D51A8 /* OFL.txt in Resources */,
+				02B5063F21814D50ADD87147 /* BootSplash.storyboard in Resources */,
+				A9265837673243ECB3F8DF96 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
