@@ -4,7 +4,10 @@ import { IMAGES } from '../constants/images';
 import { SCREEN_WIDTH } from '../constants/config';
 import Button from '../components/button';
 
-const StartPageTwoScreen = () => {
+type Props = {
+  navigation: any;
+};
+const StartPageTwoScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.mapContainer}>
@@ -27,7 +30,10 @@ const StartPageTwoScreen = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <Button title="Commencer" onPress={() => {}} />
+        <Button
+          title="Commencer"
+          onPress={() => navigation.navigate('HomeScreen')}
+        />
       </View>
     </View>
   );

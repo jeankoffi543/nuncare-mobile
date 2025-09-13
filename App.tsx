@@ -15,6 +15,7 @@ import { RootStackParamList } from './types/types';
 import StartPageOneScreen from './screens/StartPageOneScreen';
 import { options } from './constants/config';
 import StartPageTwoScreen from './screens/StartPageTwoScreen';
+import HomeScreen from './screens/HomeScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -36,11 +37,15 @@ function App() {
             component={StartPageOneScreen}
             options={options.startPageOne}
           />
-
           <Stack.Screen
             name="StartPageTwoScreen"
             component={StartPageTwoScreen}
             options={options.startPageOne}
+          />
+          <Stack.Screen
+            name="HomeScreen"
+            component={HomeScreen}
+            options={options.home}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -3,8 +3,51 @@ import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 export type RootStackParamList = {
   StartPageOneScreen: undefined;
   StartPageTwoScreen: undefined;
+  HomeScreen: undefined;
 };
 
 export type ScreenOptions = {
   [key: string]: NativeStackNavigationOptions;
+};
+
+export type Links = {
+  last: string | null;
+  first: string | null;
+  next: number | null;
+  prev: number | null;
+};
+
+export enum MediaType {
+  IMAGE = 'image',
+  VIDEO = 'video',
+}
+
+export type MetaLinks = {
+  active: boolean;
+  label: string | null;
+  url: string | null;
+  page: number | null;
+};
+
+export type Meta = {
+  current_page: number;
+  from: number;
+  last_page: number;
+  links: MetaLinks[];
+  path: string;
+  per_page: number;
+  to: number;
+  total: number;
+};
+
+export interface ResponseCollection<T> {
+  data: T[];
+  link: Links;
+  meta: Meta;
+}
+
+export type ErrorResponse = {
+  error: string;
+  message: string;
+  status: number;
 };

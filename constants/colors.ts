@@ -8,4 +8,5 @@ export const COLORS = {
   background: '#F3F3F3',
   textPrimary: '#000000',
   textSecondary: '#757575',
+  boxShadow: '#00000026',
 };
