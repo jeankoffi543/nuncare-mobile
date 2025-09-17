@@ -10,4 +10,5 @@ export const IMAGES = {
   ICON_PHARMACY: require('../assets/images/icon_pharmacy.png'),
   ICON_MENU: require('../assets/images/icon_menu.png'),
   PUBLICITY_TEST: require('../assets/images/publicity_test.png'),
+  PROFILE: require('../assets/images/profile.png'),
 };

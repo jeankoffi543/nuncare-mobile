@@ -13,7 +13,8 @@
     "types": "tsc --noEmit"
   },
   "dependencies": {
-    "@react-native/new-app-screen": "0.81.1",
+    "@react-native/new-app-screen": "^0.81.1",
+    "@react-navigation/drawer": "^7.5.8",
     "@react-navigation/native": "^7.1.17",
     "@react-navigation/native-stack": "^7.3.26",
     "@reduxjs/toolkit": "^2.9.0",
@@ -21,8 +22,12 @@
     "react": "19.1.0",
     "react-native": "0.81.1",
     "react-native-bootsplash": "^6.3.11",
+    "react-native-gesture-handler": "^2.28.0",
+    "react-native-get-random-values": "^1.11.0",
+    "react-native-reanimated": "^4.1.0",
     "react-native-safe-area-context": "^5.6.1",
     "react-native-screens": "^4.16.0",
+    "react-native-worklets": "^0.5.1",
     "react-redux": "^9.2.0"
   },
   "devDependencies": {
