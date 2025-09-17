@@ -18,6 +18,7 @@ import axios from 'axios';
 import { API_URLS } from '../constants/urls';
 import { ResponseCollection } from '../types/types';
 import { AdvertisementResource } from '../types/resources/AdvertisementResource';
+import Header from '../components/header';
 
 type Props = {
   navigation: any;
@@ -96,51 +97,55 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <StatusBar hidden={true} />
+    <>
+      {/* Header */}
+      <Header navigation={navigation} />
 
-      {/* Action */}
-      <View style={styles.cardActionContainer}>
-        {/* Pharmacy */}
-        <Card onPress={() => {}} style={styles.card}>
-          <Image source={IMAGES.ICON_PHARMACY} alt="Nucare icon pharmacy" />
-          <Text style={styles.cardText} numberOfLines={2}>
-            Pharmacie de {'\n'} garde
-          </Text>
-        </Card>
+      <View style={styles.container}>
+        <StatusBar hidden={true} />
+        {/* Action */}
+        <View style={styles.cardActionContainer}>
+          {/* Pharmacy */}
+          <Card onPress={() => {}} style={styles.card}>
+            <Image source={IMAGES.ICON_PHARMACY} alt="Nuncare icon pharmacy" />
+            <Text style={styles.cardText} numberOfLines={2}>
+              Pharmacie de {'\n'} garde
+            </Text>
+          </Card>
 
-        {/* Medicine */}
-        <Card onPress={() => {}} style={styles.card}>
-          <Image source={IMAGES.ICON_MEDICINE} alt="Nucare icon pharmacy" />
-          <Text style={styles.cardText} numberOfLines={2}>
-            Médicament {'\n'} assuré
-          </Text>
-        </Card>
-      </View>
-
-      {/* advertissment */}
-      {advertissment && (
-        <View style={styles.advertissmentContainer}>
-          <Image
-            src={advertissment.media!}
-            style={styles.advertissment}
-            alt="Nucare advertissment"
-          />
+          {/* Medicine */}
+          <Card onPress={() => {}} style={styles.card}>
+            <Image source={IMAGES.ICON_MEDICINE} alt="Nuncare icon pharmacy" />
+            <Text style={styles.cardText} numberOfLines={2}>
+              Médicament {'\n'} assuré
+            </Text>
+          </Card>
         </View>
-      )}
 
-      {/* Actuality */}
-      <Text style={styles.actualityTitle}>Actualités</Text>
-      <FlatList
-        data={actulity}
-        keyExtractor={item => item.id_publication.toString()}
-        renderItem={({ item }) => <Actuality data={item} />}
-        onEndReached={handleMore}
-        onEndReachedThreshold={0.5}
-        contentContainerStyle={styles.contentContainer}
-        ListFooterComponent={renderFooter}
-      />
-    </View>
+        {/* advertissment */}
+        {advertissment && (
+          <View style={styles.advertissmentContainer}>
+            <Image
+              src={advertissment.media!}
+              style={styles.advertissment}
+              alt="Nuncare advertissment"
+            />
+          </View>
+        )}
+
+        {/* Actuality */}
+        <Text style={styles.actualityTitle}>Actualités</Text>
+        <FlatList
+          data={actulity}
+          keyExtractor={item => item.id_publication.toString()}
+          renderItem={({ item }) => <Actuality data={item} />}
+          onEndReached={handleMore}
+          onEndReachedThreshold={0.5}
+          contentContainerStyle={styles.contentContainer}
+          ListFooterComponent={renderFooter}
+        />
+      </View>
+    </>
   );
 };
 

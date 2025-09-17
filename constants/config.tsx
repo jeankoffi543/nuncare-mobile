@@ -1,19 +1,24 @@
 import { Dimensions } from 'react-native';
 import { ScreenOptions } from '../types/types';
-import Header from '../components/header';
 
 export const options: ScreenOptions = {
   startPageOne: {
     headerShown: false,
+    animationDuration: 0,
     animation: 'slide_from_right',
   },
   startPageTwo: {
     headerShown: false,
+    animationDuration: 0,
     animation: 'slide_from_left',
   },
   home: {
-    headerShown: true,
-    header: () => <Header />,
+    headerShown: false,
+    animationDuration: 0,
+  },
+  menu: {
+    animationDuration: 0,
+    headerShown: false,
   },
 };
 

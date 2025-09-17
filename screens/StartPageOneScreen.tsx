@@ -11,7 +11,11 @@ const StartPageOneScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.mapContainer}>
-        <Image source={IMAGES.MAP_FRAME} style={styles.map} alt="Nucare Logo" />
+        <Image
+          source={IMAGES.MAP_FRAME}
+          style={styles.map}
+          alt="Nuncare Logo"
+        />
       </View>
 
       <View style={styles.descriptionContainer}>
@@ -20,7 +24,7 @@ const StartPageOneScreen: React.FC<Props> = ({ navigation }) => {
         </Text>
         <Image
           source={IMAGES.PAGE_ONE_INDICATOR}
-          alt="Nucare Page one indicator"
+          alt="Nuncare Page one indicator"
         />
       </View>
 

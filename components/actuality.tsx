@@ -14,12 +14,12 @@ const Actuality: React.FC<Props> = ({ data }) => {
     <TouchableOpacity onPress={() => {}}>
       <View style={styles.container}>
         {data?.media ? (
-          <Image src={data?.media} style={styles.media} alt="Nucare media" />
+          <Image src={data?.media} style={styles.media} alt="Nuncare media" />
         ) : (
           <Image
             source={IMAGES.LOGO}
             style={styles.defaultMedia}
-            alt="Nucare media"
+            alt="Nuncare media"
           />
         )}
         <View style={styles.description}>

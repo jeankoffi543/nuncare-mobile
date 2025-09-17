@@ -3,15 +3,21 @@ import React from 'react';
 import { IMAGES } from '../constants/images';
 import Pressable from './pressable';
 
-const Header = () => {
+type Props = {
+  navigation: any;
+};
+const Header: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.container1}>
-        <Pressable onPress={() => {}}>
-          <Image source={IMAGES.ICON_MENU} alt="Nucare icon menu" />
+        <Pressable onPress={() => navigation.openDrawer()}>
+          <Image source={IMAGES.ICON_MENU} alt="Nuncare icon menu" />
         </Pressable>
-        <Pressable onPress={() => {}} style={styles.logoContainer}>
-          <Image source={IMAGES.LOGO} style={styles.logo} alt="Nucare logo" />
+        <Pressable
+          onPress={() => navigation.openDrawer()}
+          style={styles.logoContainer}
+        >
+          <Image source={IMAGES.LOGO} style={styles.logo} alt="Nuncare logo" />
         </Pressable>
       </View>
 
@@ -20,7 +26,7 @@ const Header = () => {
         <Pressable onPress={() => {}} style={styles.notificationWrapper}>
           <Image
             source={IMAGES.ICON_NOTIFICATION}
-            alt="Nucare icon notification"
+            alt="Nuncare icon notification"
           />
           <View style={styles.badge}>
             <Text style={styles.badgeText}>3</Text>
@@ -28,7 +34,7 @@ const Header = () => {
         </Pressable>
 
         <Pressable onPress={() => {}}>
-          <Image source={IMAGES.ICON_LOCATION} alt="Nucare icon location" />
+          <Image source={IMAGES.ICON_LOCATION} alt="Nuncare icon location" />
         </Pressable>
       </View>
     </View>

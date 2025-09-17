@@ -15,7 +15,9 @@ import { RootStackParamList } from './types/types';
 import StartPageOneScreen from './screens/StartPageOneScreen';
 import { options } from './constants/config';
 import StartPageTwoScreen from './screens/StartPageTwoScreen';
-import HomeScreen from './screens/HomeScreen';
+import MenuScreen from './screens/MenuScreen';
+
+// import MenuScreen from './screens/MenuScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -43,9 +45,9 @@ function App() {
             options={options.startPageOne}
           />
           <Stack.Screen
-            name="HomeScreen"
-            component={HomeScreen}
-            options={options.home}
+            name="MenuScreen"
+            component={MenuScreen}
+            options={options.menu}
           />
         </Stack.Navigator>
       </NavigationContainer>

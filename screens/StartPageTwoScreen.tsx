@@ -14,7 +14,7 @@ const StartPageTwoScreen: React.FC<Props> = ({ navigation }) => {
         <Image
           source={IMAGES.PAGE_TWO_FRAME}
           style={styles.map}
-          alt="Nucare Logo"
+          alt="Nuncare Logo"
         />
       </View>
 
@@ -25,14 +25,14 @@ const StartPageTwoScreen: React.FC<Props> = ({ navigation }) => {
 
         <Image
           source={IMAGES.PAGE_TWO_INDICATOR}
-          alt="Nucare Page one indicator"
+          alt="Nuncare Page one indicator"
         />
       </View>
 
       <View style={styles.buttonContainer}>
         <Button
           title="Commencer"
-          onPress={() => navigation.navigate('HomeScreen')}
+          onPress={() => navigation.navigate('MenuScreen')}
         />
       </View>
     </View>

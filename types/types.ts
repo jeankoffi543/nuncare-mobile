@@ -4,6 +4,7 @@ export type RootStackParamList = {
   StartPageOneScreen: undefined;
   StartPageTwoScreen: undefined;
   HomeScreen: undefined;
+  MenuScreen: undefined;
 };
 
 export type ScreenOptions = {
