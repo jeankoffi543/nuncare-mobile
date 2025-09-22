@@ -1,5 +1,6 @@
 import { Dimensions } from 'react-native';
 import { ScreenOptions } from '../types/types';
+import ExtraHeader from '../components/extra-header';
 
 export const options: ScreenOptions = {
   startPageOne: {
@@ -19,6 +20,11 @@ export const options: ScreenOptions = {
   menu: {
     animationDuration: 0,
     headerShown: false,
+  },
+  extraMenu: {
+    header: () => <ExtraHeader />,
+    presentation: 'modal',
+    animation: 'none',
   },
 };
 

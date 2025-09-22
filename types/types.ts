@@ -1,3 +1,4 @@
+import { GeolocationResponse } from '@react-native-community/geolocation';
 import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 
 export type RootStackParamList = {
@@ -5,6 +6,8 @@ export type RootStackParamList = {
   StartPageTwoScreen: undefined;
   HomeScreen: undefined;
   MenuScreen: undefined;
+  PharmaciesOnDutyScreen: undefined;
+  AllPharmaciesScreen: undefined;
 };
 
 export type ScreenOptions = {
@@ -16,6 +19,11 @@ export type Links = {
   first: string | null;
   next: number | null;
   prev: number | null;
+};
+
+export type ReduxStore = {
+  position: GeolocationResponse | undefined;
+  subscriptionId: number | null;
 };
 
 export enum MediaType {
@@ -52,3 +60,14 @@ export type ErrorResponse = {
   message: string;
   status: number;
 };
+
+export enum PharmacyStatus {
+  ACTIVE = 'active',
+  SUSPENDED = 'inactive',
+}
+
+export enum PharmacyOnDuty {
+  DAY = 'day',
+  NIGHT = 'night',
+  TWENTYFOUR = '24h',
+}

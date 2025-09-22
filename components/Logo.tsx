@@ -5,7 +5,7 @@ import { IMAGES } from '../constants/images';
 const Logo = () => {
   return (
     <View style={styles.container}>
-      <Image src={IMAGES.LOGO} style={styles.logo} alt="logo" />
+      <Image src={IMAGES.LOGO} style={styles.logo} accessibilityLabel="logo" />
     </View>
   );
 };

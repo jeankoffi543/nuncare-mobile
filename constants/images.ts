@@ -11,4 +11,13 @@ export const IMAGES = {
   ICON_MENU: require('../assets/images/icon_menu.png'),
   PUBLICITY_TEST: require('../assets/images/publicity_test.png'),
   PROFILE: require('../assets/images/profile.png'),
+  TABLER_X: require('../assets/images/tabler_x.png'),
+  ICON_PHARMACY_2: require('../assets/images/icon_pharmacy_2.png'),
+  ICON_SEARCH: require('../assets/images/icon_search.png'),
+  ICON_FILTER: require('../assets/images/icon_filter.png'),
+  ICON_CHEVRON: require('../assets/images/icon_chevron.png'),
+  ICON_CITY: require('../assets/images/icon_city.png'),
+  ICON_SECTOR: require('../assets/images/icon_sector.png'),
+  ICON_REGION: require('../assets/images/icon_region.png'),
+  LINE: require('../assets/images/line.png'),
 };

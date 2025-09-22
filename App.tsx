@@ -16,19 +16,27 @@ import StartPageOneScreen from './screens/StartPageOneScreen';
 import { options } from './constants/config';
 import StartPageTwoScreen from './screens/StartPageTwoScreen';
 import MenuScreen from './screens/MenuScreen';
+import PharmaciesOnDutyScreen from './screens/PharmaciesOnDutyScreen';
+import useLocation from './hooks/useLocation';
+import AllPharmaciesScreen from './screens/AllPharmaciesScreen';
 
 // import MenuScreen from './screens/MenuScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function App() {
+  const { requestPermission, isGranted } = useLocation();
+
   useEffect(() => {
     const init = async () => {};
-
     init().finally(async () => {
       await BootSplash.hide({ fade: true });
     });
   }, []);
+
+  if (!isGranted) {
+    requestPermission();
+  }
 
   return (
     <Provider store={store}>
@@ -48,6 +56,18 @@ function App() {
             name="MenuScreen"
             component={MenuScreen}
             options={options.menu}
+          />
+
+          <Stack.Screen
+            name="PharmaciesOnDutyScreen"
+            component={PharmaciesOnDutyScreen}
+            options={options.extraMenu}
+          />
+
+          <Stack.Screen
+            name="AllPharmaciesScreen"
+            component={AllPharmaciesScreen}
+            options={options.extraMenu}
           />
         </Stack.Navigator>
       </NavigationContainer>

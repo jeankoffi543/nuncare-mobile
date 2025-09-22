@@ -2,6 +2,7 @@ export const COLORS = {
   black: '#000000',
   primaryDark: '#1E003D',
   primary: '#03BABA',
+  secondary: '#93CE69',
   gray: '#757575',
   grayLight: '#A7A9B1',
   backgroundLight: '#EFF6FF',
@@ -9,4 +10,6 @@ export const COLORS = {
   textPrimary: '#000000',
   textSecondary: '#757575',
   boxShadow: '#00000026',
+  textSecondaryLight: '#B7B7B7',
+  primaryLight: '#03BABA38',
 };
