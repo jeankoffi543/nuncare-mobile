@@ -8,7 +8,7 @@ const Avatar = () => {
     <View style={styles.container}>
       <Image
         source={IMAGES.PROFILE}
-        alt="Nuncare profile"
+        accessibilityLabel="Nuncare profile"
         style={styles.image}
       />
     </View>

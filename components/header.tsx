@@ -11,13 +11,20 @@ const Header: React.FC<Props> = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.container1}>
         <Pressable onPress={() => navigation.openDrawer()}>
-          <Image source={IMAGES.ICON_MENU} alt="Nuncare icon menu" />
+          <Image
+            source={IMAGES.ICON_MENU}
+            accessibilityLabel="Nuncare icon menu"
+          />
         </Pressable>
         <Pressable
           onPress={() => navigation.openDrawer()}
           style={styles.logoContainer}
         >
-          <Image source={IMAGES.LOGO} style={styles.logo} alt="Nuncare logo" />
+          <Image
+            source={IMAGES.LOGO}
+            style={styles.logo}
+            accessibilityLabel="Nuncare logo"
+          />
         </Pressable>
       </View>
 
@@ -26,7 +33,7 @@ const Header: React.FC<Props> = ({ navigation }) => {
         <Pressable onPress={() => {}} style={styles.notificationWrapper}>
           <Image
             source={IMAGES.ICON_NOTIFICATION}
-            alt="Nuncare icon notification"
+            accessibilityLabel="Nuncare icon notification"
           />
           <View style={styles.badge}>
             <Text style={styles.badgeText}>3</Text>
@@ -34,7 +41,10 @@ const Header: React.FC<Props> = ({ navigation }) => {
         </Pressable>
 
         <Pressable onPress={() => {}}>
-          <Image source={IMAGES.ICON_LOCATION} alt="Nuncare icon location" />
+          <Image
+            source={IMAGES.ICON_LOCATION}
+            accessibilityLabel="Nuncare icon location"
+          />
         </Pressable>
       </View>
     </View>

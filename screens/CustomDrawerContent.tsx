@@ -29,7 +29,7 @@ const CustomDrawerContent = () => {
             <View style={styles.notificationWrapper}>
               <Image
                 source={IMAGES.ICON_NOTIFICATION}
-                alt="Nuncare icon notification"
+                accessibilityLabel="Nuncare icon notification"
               />
               <View style={styles.badge}>
                 <Text style={styles.badgeText}>3</Text>
@@ -40,7 +40,10 @@ const CustomDrawerContent = () => {
 
           {/* Localisation */}
           <Pressable onPress={() => {}} style={styles.containerTitleWithIcon}>
-            <Image source={IMAGES.ICON_LOCATION} alt="Nuncare icon location" />
+            <Image
+              source={IMAGES.ICON_LOCATION}
+              accessibilityLabel="Nuncare icon location"
+            />
             <Text style={styles.title}>Localisation</Text>
           </Pressable>
         </View>

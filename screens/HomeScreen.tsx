@@ -16,12 +16,13 @@ import Actuality from '../components/actuality';
 import { COLORS } from '../constants/colors';
 import axios from 'axios';
 import { API_URLS } from '../constants/urls';
-import { ResponseCollection } from '../types/types';
+import { ResponseCollection, RootStackParamList } from '../types/types';
 import { AdvertisementResource } from '../types/resources/AdvertisementResource';
 import Header from '../components/header';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 type Props = {
-  navigation: any;
+  navigation: NativeStackNavigationProp<RootStackParamList, 'HomeScreen'>;
 };
 const HomeScreen: React.FC<Props> = ({ navigation }) => {
   const [advertissment, setAdvertissment] =
@@ -106,8 +107,16 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
         {/* Action */}
         <View style={styles.cardActionContainer}>
           {/* Pharmacy */}
-          <Card onPress={() => {}} style={styles.card}>
-            <Image source={IMAGES.ICON_PHARMACY} alt="Nuncare icon pharmacy" />
+          <Card
+            onPress={() => {
+              navigation.navigate('AllPharmaciesScreen');
+            }}
+            style={styles.card}
+          >
+            <Image
+              source={IMAGES.ICON_PHARMACY}
+              accessibilityLabel="Nuncare icon pharmacy"
+            />
             <Text style={styles.cardText} numberOfLines={2}>
               Pharmacie de {'\n'} garde
             </Text>
@@ -115,7 +124,10 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
 
           {/* Medicine */}
           <Card onPress={() => {}} style={styles.card}>
-            <Image source={IMAGES.ICON_MEDICINE} alt="Nuncare icon pharmacy" />
+            <Image
+              source={IMAGES.ICON_MEDICINE}
+              accessibilityLabel="Nuncare icon pharmacy"
+            />
             <Text style={styles.cardText} numberOfLines={2}>
               Médicament {'\n'} assuré
             </Text>
@@ -123,12 +135,12 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
         </View>
 
         {/* advertissment */}
-        {advertissment && (
+        {advertissment && advertissment.media && (
           <View style={styles.advertissmentContainer}>
             <Image
-              src={advertissment.media!}
+              source={{ uri: advertissment.media }}
               style={styles.advertissment}
-              alt="Nuncare advertissment"
+              accessibilityLabel="Nuncare advertissment"
             />
           </View>
         )}

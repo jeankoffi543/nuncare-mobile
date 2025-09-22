@@ -14,7 +14,7 @@ const StartPageTwoScreen: React.FC<Props> = ({ navigation }) => {
         <Image
           source={IMAGES.PAGE_TWO_FRAME}
           style={styles.map}
-          alt="Nuncare Logo"
+          accessibilityLabel="Nuncare Logo"
         />
       </View>
 
@@ -25,7 +25,7 @@ const StartPageTwoScreen: React.FC<Props> = ({ navigation }) => {
 
         <Image
           source={IMAGES.PAGE_TWO_INDICATOR}
-          alt="Nuncare Page one indicator"
+          accessibilityLabel="Nuncare Page one indicator"
         />
       </View>
 

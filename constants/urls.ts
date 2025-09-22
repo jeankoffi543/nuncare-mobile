@@ -8,4 +8,6 @@ export const API_URLS = {
   USERS: `${BASE}/likes`,
   PUBLICATIONS: `${BASE}/publications`,
   ADVERTISSEMENTS: `${BASE}/advertisements`,
+  PHARMACIES_ON_DUTY: `${BASE}/pharmacies_on_duties`,
+  PHARMACIES: `${BASE}/pharmacies`,
 };
