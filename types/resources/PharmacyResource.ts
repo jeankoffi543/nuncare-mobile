@@ -6,6 +6,7 @@ export type PharmacyResource = {
   duty: PharmaciesOnDutyResource;
   code: string;
   name: string;
+  pharmacist_name: string;
   address: string;
   phone: string;
   latitude: string;

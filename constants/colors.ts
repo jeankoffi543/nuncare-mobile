@@ -12,4 +12,5 @@ export const COLORS = {
   boxShadow: '#00000026',
   textSecondaryLight: '#B7B7B7',
   primaryLight: '#03BABA38',
+  gray_51: '#00000082',
 };

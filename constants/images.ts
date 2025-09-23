@@ -20,4 +20,5 @@ export const IMAGES = {
   ICON_SECTOR: require('../assets/images/icon_sector.png'),
   ICON_REGION: require('../assets/images/icon_region.png'),
   LINE: require('../assets/images/line.png'),
+  MAP_PIKER: require('../assets/images/map_piker.png'),
 };
