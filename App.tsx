@@ -20,6 +20,8 @@ import PharmaciesOnDutyScreen from './screens/PharmaciesOnDutyScreen';
 import useLocation from './hooks/useLocation';
 import AllPharmaciesScreen from './screens/AllPharmaciesScreen';
 import MapScreen from './screens/MapScreen';
+import AllMedicinesScreen from './screens/AllMedicinesScreen';
+import AllMedicinesInsurancesScreen from './screens/AllMedicinesInsurancesScreen';
 
 // import MenuScreen from './screens/MenuScreen';
 
@@ -68,6 +70,18 @@ function App() {
           <Stack.Screen
             name="AllPharmaciesScreen"
             component={AllPharmaciesScreen}
+            options={options.extraMenu}
+          />
+
+          <Stack.Screen
+            name="AllMedicinesScreen"
+            component={AllMedicinesScreen}
+            options={options.extraMenu}
+          />
+
+          <Stack.Screen
+            name="AllMedicinesInsurancesScreen"
+            component={AllMedicinesInsurancesScreen}
             options={options.extraMenu}
           />
 

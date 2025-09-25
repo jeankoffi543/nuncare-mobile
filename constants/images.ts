@@ -22,4 +22,5 @@ export const IMAGES = {
   LINE: require('../assets/images/line.png'),
   MAP_PIKER: require('../assets/images/map_piker.png'),
   ICON_CALL: require('../assets/images/icon_call.png'),
+  ICON_MEDICINE_2: require('../assets/images/icon_medicine_2.png'),
 };
