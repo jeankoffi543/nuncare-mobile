@@ -22,7 +22,7 @@ const ExtraHeader: React.FC = () => {
       </View>
 
       <View style={styles.container1}>
-        <Pressable onPress={() => navigation.goBack()}>
+        <Pressable onPress={() => navigation.popTo('MenuScreen')}>
           <Image
             source={IMAGES.TABLER_X}
             accessibilityLabel="Nuncare icon close"

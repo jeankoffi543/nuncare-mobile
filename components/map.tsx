@@ -1,4 +1,11 @@
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+  Image,
+  Linking,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import WebView from 'react-native-webview';
 import {
   formatDuration,
@@ -122,8 +129,21 @@ const Map: React.FC<Props> = ({ data, currentPosition, showTuile }) => {
             )}
           </View>
           <View style={styles.description}>
+            {/* Call */}
+            <Pressable
+              onPress={() =>
+                Linking.openURL(`tel:${formatPharmacy(dataState, 'phone')}`)
+              }
+            >
+              <Image
+                source={IMAGES.ICON_CALL}
+                style={styles.call}
+                accessibilityLabel="Nucare call icon"
+              />
+            </Pressable>
+
             <Text numberOfLines={2} style={styles.title}>
-              {formatPharmacy(data, 'name')}
+              {formatPharmacy(dataState, 'name')}
             </Text>
             <View style={styles.location}>
               <Image source={IMAGES.ICON_LOCATION} />
@@ -202,6 +222,14 @@ const styles = StyleSheet.create({
   searchText: {
     fontFamily: 'Euclid Circular A Regular',
     fontSize: 14,
+  },
+  call: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    width: 50,
+    height: 50,
+    right: 0,
+    bottom: 100,
   },
 });
 

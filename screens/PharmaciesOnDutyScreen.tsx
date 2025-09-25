@@ -54,7 +54,6 @@ function useDebounce(value: string, delay: number) {
   return debouncedValue;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const PharmaciesOnDutyScreen: React.FC<Props> = ({ navigation }) => {
   const [pharmaciesOfDuty, setPharmaciesOfDuty] = useState<
     PharmaciesOnDutyResource[]
