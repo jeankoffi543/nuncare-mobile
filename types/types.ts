@@ -10,6 +10,8 @@ export type RootStackParamList = {
   MenuScreen: undefined;
   PharmaciesOnDutyScreen: undefined;
   AllPharmaciesScreen: undefined;
+  AllMedicinesInsurancesScreen: undefined;
+  AllMedicinesScreen: undefined;
   MapScreen: {
     data: PharmaciesOnDutyResource | PharmacyResource | null;
   };
@@ -75,4 +77,14 @@ export enum PharmacyOnDuty {
   DAY = 'day',
   NIGHT = 'night',
   TWENTYFOUR = '24h',
+}
+
+export enum MedicineScheme {
+  INSURED = 'insured',
+  NON_INSURED = 'non-insured',
+}
+
+export enum InsuranceStatus {
+  ACTIVE = 'active',
+  INACTIVE = 'inactive',
 }

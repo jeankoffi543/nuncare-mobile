@@ -118,18 +118,23 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
               accessibilityLabel="Nuncare icon pharmacy"
             />
             <Text style={styles.cardText} numberOfLines={2}>
-              Pharmacie de {'\n'} garde
+              Pharmacies
             </Text>
           </Card>
 
           {/* Medicine */}
-          <Card onPress={() => {}} style={styles.card}>
+          <Card
+            onPress={() => {
+              navigation.navigate('AllMedicinesScreen');
+            }}
+            style={styles.card}
+          >
             <Image
               source={IMAGES.ICON_MEDICINE}
               accessibilityLabel="Nuncare icon pharmacy"
             />
             <Text style={styles.cardText} numberOfLines={2}>
-              Médicament {'\n'} assuré
+              Médicaments
             </Text>
           </Card>
         </View>

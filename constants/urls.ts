@@ -10,6 +10,8 @@ export const API_URLS = {
   ADVERTISSEMENTS: `${BASE}/advertisements`,
   PHARMACIES_ON_DUTY: `${BASE}/pharmacies_on_duties`,
   PHARMACIES: `${BASE}/pharmacies`,
+  MEDICINES: `${BASE}/medicines`,
+  MEDICINES_INSURANCES: `${BASE}/medicines/insurances`,
 };
 
 export const MAP = {
