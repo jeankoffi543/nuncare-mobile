@@ -1,5 +1,7 @@
 import { GeolocationResponse } from '@react-native-community/geolocation';
 import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
+import { PharmaciesOnDutyResource } from './resources/PharmaciesOnDutyResource';
+import { PharmacyResource } from './resources/PharmacyResource';
 
 export type RootStackParamList = {
   StartPageOneScreen: undefined;
@@ -8,6 +10,9 @@ export type RootStackParamList = {
   MenuScreen: undefined;
   PharmaciesOnDutyScreen: undefined;
   AllPharmaciesScreen: undefined;
+  MapScreen: {
+    data: PharmaciesOnDutyResource | PharmacyResource | null;
+  };
 };
 
 export type ScreenOptions = {

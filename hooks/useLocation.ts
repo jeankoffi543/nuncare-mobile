@@ -27,7 +27,6 @@ const useLocation = (options?: GeolocationOptions) => {
     try {
       const watchID = Geolocation.watchPosition(
         pos => {
-          // console.log(pos);
           setPosition(pos);
         },
         err => {

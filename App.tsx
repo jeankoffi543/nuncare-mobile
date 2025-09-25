@@ -19,6 +19,7 @@ import MenuScreen from './screens/MenuScreen';
 import PharmaciesOnDutyScreen from './screens/PharmaciesOnDutyScreen';
 import useLocation from './hooks/useLocation';
 import AllPharmaciesScreen from './screens/AllPharmaciesScreen';
+import MapScreen from './screens/MapScreen';
 
 // import MenuScreen from './screens/MenuScreen';
 
@@ -67,6 +68,12 @@ function App() {
           <Stack.Screen
             name="AllPharmaciesScreen"
             component={AllPharmaciesScreen}
+            options={options.extraMenu}
+          />
+
+          <Stack.Screen
+            name="MapScreen"
+            component={MapScreen}
             options={options.extraMenu}
           />
         </Stack.Navigator>

@@ -5,10 +5,13 @@ import { PharmacyResource } from '../types/resources/PharmacyResource';
 import Pressable from './pressable';
 import SystemNavigationBar from 'react-native-system-navigation-bar';
 import { IMAGES } from '../constants/images';
-import { formatPharmacy, getReadableDistance } from '../libs/utils';
+import { formatPharmacy, getReadableDistanceFromCoord } from '../libs/utils';
 import { format } from 'date-fns';
 import { GeolocationResponse } from '@react-native-community/geolocation';
 import Map from './map';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../types/types';
+import { useNavigation } from '@react-navigation/native';
 
 type Props = {
   data: PharmaciesOnDutyResource | PharmacyResource | null;
@@ -21,6 +24,9 @@ const PharmacDetail: React.FC<Props> = ({
   setModalVisible,
   position,
 }) => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
   return (
     <View style={styles.container}>
       <Pressable
@@ -78,14 +84,12 @@ const PharmacDetail: React.FC<Props> = ({
         ) : (
           'end_date' in data! && (
             <Text style={styles.itemTitle}>
-              data && (
               <Text style={styles.itemValue}>
                 {format(
                   new Date(data?.end_date!),
                   "'de garde jusqu’au'  dd/MM/yyyy",
                 )}
               </Text>
-              )
             </Text>
           )
         )}
@@ -94,7 +98,7 @@ const PharmacDetail: React.FC<Props> = ({
           Distance {'\n'}
           <Text style={styles.itemValue} numberOfLines={3}>
             {' '}
-            {getReadableDistance(
+            {getReadableDistanceFromCoord(
               {
                 latitude: position?.coords?.latitude,
                 longitude: position?.coords?.longitude,
@@ -111,7 +115,7 @@ const PharmacDetail: React.FC<Props> = ({
 
       <View style={styles.mapTitle}>
         <Text style={styles.itemTitle}>Localisation {'\n'}</Text>
-        <Pressable>
+        <Pressable onPress={() => navigation.navigate('MapScreen', { data })}>
           <Text style={styles.mapButton}>Voir sur la carte</Text>
         </Pressable>
       </View>
