@@ -13,4 +13,5 @@ export const COLORS = {
   textSecondaryLight: '#B7B7B7',
   primaryLight: '#03BABA38',
   gray_51: '#00000082',
+  gray_40: '#555555',
 };

@@ -29,6 +29,7 @@ import {
   GestureHandlerRootView,
 } from 'react-native-gesture-handler';
 import { scheduleOnRN } from 'react-native-worklets';
+import useDebounce from '../hooks/useDebounce';
 
 type Props = {
   navigation: NativeStackNavigationProp<
@@ -36,23 +37,6 @@ type Props = {
     'AllPharmaciesScreen'
   >;
 };
-
-// Custom hook for debouncing
-function useDebounce(value: string, delay: number) {
-  const [debouncedValue, setDebouncedValue] = useState(value);
-
-  React.useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [value, delay]);
-
-  return debouncedValue;
-}
 
 const AllPharmaciesScreen: React.FC<Props> = ({ navigation }) => {
   const [pharmaciesOfDuty, setPharmaciesOfDuty] = useState<PharmacyResource[]>(
@@ -129,11 +113,14 @@ const AllPharmaciesScreen: React.FC<Props> = ({ navigation }) => {
     navigation.navigate('PharmaciesOnDutyScreen');
   };
 
-  const panGesture = Gesture.Pan().onEnd((event, success) => {
-    if (success && event.translationX < 50) {
-      scheduleOnRN(goRight);
-    }
-  });
+  const panGesture = Gesture.Pan()
+    .activeOffsetX([-30, 30])
+    .failOffsetY([-10, 10])
+    .onEnd(event => {
+      if (event.translationX > 50) {
+        scheduleOnRN(goRight);
+      }
+    });
 
   React.useEffect(() => {
     // fetch actualities

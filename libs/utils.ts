@@ -34,7 +34,7 @@ type Position = {
   longitude: number | undefined;
 };
 
-export const getReadableDistance = (from: Position, to: Position) => {
+export const getReadableDistanceFromCoord = (from: Position, to: Position) => {
   if (!from?.latitude || !from?.longitude || !to?.latitude || !to?.longitude) {
     return '...';
   }
@@ -58,6 +58,16 @@ export const getReadableDistance = (from: Position, to: Position) => {
   }
 
   return `${(distanceInMeters / 1000).toFixed(1)} km`;
+};
+
+export const getReadableDistance = (distance: number) => {
+  if (!distance) return '...';
+
+  if (distance < 1000) {
+    return `${distance} m`;
+  }
+
+  return `${(distance / 1000).toFixed(1)} km`;
 };
 
 export const formatPharmacy = (
@@ -87,3 +97,24 @@ export const formatPharmacy = (
 
   return '...';
 };
+
+export function formatDuration(minutes: number): string {
+  if (!minutes) return '...';
+  if (minutes < 60) {
+    return `${minutes} min`;
+  } else if (minutes < 24 * 60) {
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+    if (remainingMinutes === 0) {
+      return `${hours} h`;
+    }
+    return `${hours} h ${remainingMinutes} min`;
+  } else {
+    const days = Math.floor(minutes / (24 * 60));
+    const remainingHours = Math.floor((minutes % (24 * 60)) / 60);
+    if (remainingHours === 0) {
+      return `${days} jour${days > 1 ? 's' : ''}`;
+    }
+    return `${days} jour${days > 1 ? 's' : ''} ${remainingHours} h`;
+  }
+}

@@ -10,7 +10,7 @@ import React, { useEffect, useState } from 'react';
 import { COLORS } from '../constants/colors';
 import { IMAGES } from '../constants/images';
 import { PharmaciesOnDutyResource } from '../types/resources/PharmaciesOnDutyResource';
-import { formatPharmacy, getReadableDistance } from '../libs/utils';
+import { formatPharmacy, getReadableDistanceFromCoord } from '../libs/utils';
 import useLocation from '../hooks/useLocation';
 import { PharmacyResource } from '../types/resources/PharmacyResource';
 import { format } from 'date-fns';
@@ -35,7 +35,6 @@ const Pharmacy: React.FC<Props> = ({ data }) => {
     if (!position) {
       getCurrentPosition();
     }
-    console.log(position);
   }, [position, getCurrentPosition]);
 
   useEffect(() => {
@@ -87,7 +86,7 @@ const Pharmacy: React.FC<Props> = ({ data }) => {
                 )
               )}
               {' À '}
-              {getReadableDistance(
+              {getReadableDistanceFromCoord(
                 {
                   latitude: position?.coords?.latitude,
                   longitude: position?.coords?.longitude,

@@ -130,23 +130,15 @@ const PharmaciesOnDutyScreen: React.FC<Props> = ({ navigation }) => {
     navigation.navigate('AllPharmaciesScreen');
   };
 
-  const goRight = () => {
-    navigation.goBack(); // Ou une autre page spécifique
-  };
-
-  const panGesture = Gesture.Pan().onEnd((event, success) => {
-    'worklet'; // Assurez-vous d'avoir 'worklet' au début de la fonction
-    if (success) {
-      // Balayage de droite à gauche
+  const panGesture = Gesture.Pan()
+    .activeOffsetX([-30, 30])
+    .failOffsetY([-10, 10])
+    .onEnd(event => {
       if (event.translationX < -50) {
         scheduleOnRN(goLeft);
       }
-      // Balayage de gauche à droite
-      else if (event.translationX > 50) {
-        scheduleOnRN(goRight);
-      }
-    }
-  });
+    });
+
   React.useEffect(() => {
     // fetch actualities
     (async () => await fetchList(1))();
