@@ -4,14 +4,24 @@ import { PublicationResource } from '../types/resources/PublicationResource';
 import { COLORS } from '../constants/colors';
 import { formatDate, timeAgo } from '../libs/utils';
 import { IMAGES } from '../constants/images';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../types/types';
+import { useNavigation } from '@react-navigation/native';
 
 type Props = {
   data: PublicationResource | null;
 };
 
 const Actuality: React.FC<Props> = ({ data }) => {
+  const navigation =
+    useNavigation<
+      NativeStackNavigationProp<RootStackParamList, 'ActualityScreen'>
+    >();
+
   return (
-    <TouchableOpacity onPress={() => {}}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('ActualityScreen', { data })}
+    >
       <View style={styles.container}>
         {data?.media ? (
           <Image

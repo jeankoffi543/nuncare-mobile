@@ -1,6 +1,8 @@
 import { getDistance } from 'geolib';
 import { PharmaciesOnDutyResource } from '../types/resources/PharmaciesOnDutyResource';
 import { PharmacyResource } from '../types/resources/PharmacyResource';
+import { formatDistanceToNow } from 'date-fns';
+import { fr } from 'date-fns/locale';
 
 export const formatDate = (dateStr: string) => {
   const date = new Date(dateStr);
@@ -29,6 +31,10 @@ export const timeAgo = (dateStr: string) => {
   const years = Math.floor(months / 12);
   return `Il y a ${years} an${years > 1 ? 's' : ''}`;
 };
+export const timeAgo2 = (date: string) => {
+  return formatDistanceToNow(new Date(date), { addSuffix: true, locale: fr });
+};
+
 type Position = {
   latitude: number | undefined;
   longitude: number | undefined;
@@ -117,4 +123,14 @@ export function formatDuration(minutes: number): string {
     }
     return `${days} jour${days > 1 ? 's' : ''} ${remainingHours} h`;
   }
+}
+
+export function formatIterraction(input: number) {
+  return input < 10000
+    ? input
+    : input < 1000000
+    ? `${(input / 1000).toFixed(1)} k`
+    : input < 1000000000
+    ? `${(input / 1000000).toFixed(1)} M`
+    : `${(input / 1000000000).toFixed(1)} G`;
 }

@@ -2,6 +2,8 @@ import { GeolocationResponse } from '@react-native-community/geolocation';
 import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 import { PharmaciesOnDutyResource } from './resources/PharmaciesOnDutyResource';
 import { PharmacyResource } from './resources/PharmacyResource';
+import { PublicationResource } from './resources/PublicationResource';
+import { CommentResource } from './resources/CommentResource';
 
 export type RootStackParamList = {
   StartPageOneScreen: undefined;
@@ -12,8 +14,16 @@ export type RootStackParamList = {
   AllPharmaciesScreen: undefined;
   AllMedicinesInsurancesScreen: undefined;
   AllMedicinesScreen: undefined;
+  ActualityScreen: {
+    data: PublicationResource | null;
+  };
   MapScreen: {
     data: PharmaciesOnDutyResource | PharmacyResource | null;
+  };
+  CommentEditScreen: {
+    id_publication: number | null | undefined;
+    comment: CommentResource | null;
+    onSave: (updatedComment: CommentResource) => void;
   };
 };
 
@@ -60,6 +70,10 @@ export interface ResponseCollection<T> {
   data: T[];
   link: Links;
   meta: Meta;
+}
+
+export interface ResponseJson<T> {
+  data: T;
 }
 
 export type ErrorResponse = {
