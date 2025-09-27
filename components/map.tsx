@@ -73,7 +73,6 @@ const Map: React.FC<Props> = ({ data, currentPosition, showTuile }) => {
   const handleOnPressSearch = (
     data_: PharmacyResource | PharmaciesOnDutyResource | null,
   ) => {
-    console.log(data_);
     setPharmacy([]);
     setDataState(data_);
   };

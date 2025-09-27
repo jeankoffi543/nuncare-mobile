@@ -46,9 +46,7 @@ const ActualityScreen = () => {
           shares_count: res.data.data.shares_count ?? prev.shares_count,
         };
       });
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   useEffect(() => {
@@ -64,8 +62,8 @@ const ActualityScreen = () => {
           },
         },
       )
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
+      .then()
+      .catch();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -89,9 +87,7 @@ const ActualityScreen = () => {
           user_liked: res.data.data?.user_liked ?? prev.user_liked,
         };
       });
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   const handleShare = async () => {
@@ -117,12 +113,10 @@ const ActualityScreen = () => {
               },
             },
           )
-          .then(res => console.log(res))
-          .catch(err => console.log(err));
+          .then()
+          .catch();
       }
-    } catch (err) {
-      console.log('Erreur partage:', err);
-    }
+    } catch (err) {}
   };
 
   return (
@@ -251,7 +245,7 @@ const ActualityScreen = () => {
             .then(() => {
               setModalVisible(false);
             })
-            .catch(err => console.log(err));
+            .catch();
         }}
       >
         <View style={styles.modalOverlay}>

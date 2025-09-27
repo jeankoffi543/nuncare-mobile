@@ -30,10 +30,6 @@ const MapScreen: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    console.log(position);
-  }, [position]);
-
   return (
     <View style={styles.container}>
       <Map data={data} currentPosition={position} showTuile />

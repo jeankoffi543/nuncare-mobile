@@ -98,7 +98,6 @@ const Comment: React.FC<Props> = ({ data, setModalVisible }) => {
             },
           },
         );
-        console.log(res.data);
         const newItems = res.data.data;
 
         setComments(prev =>
