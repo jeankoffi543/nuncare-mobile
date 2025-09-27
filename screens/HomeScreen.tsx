@@ -20,6 +20,7 @@ import { ResponseCollection, RootStackParamList } from '../types/types';
 import { AdvertisementResource } from '../types/resources/AdvertisementResource';
 import Header from '../components/header';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useFocusEffect } from '@react-navigation/native';
 
 type Props = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'HomeScreen'>;
@@ -39,12 +40,16 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
     setLoading(true);
     try {
       const res = await axios.get<ResponseCollection<PublicationResource>>(
-        `${API_URLS.PUBLICATIONS}?page=${pageNumber}`,
+        `${API_URLS.PUBLICATIONS}?page=${pageNumber}&scopes[]=with_count&scopes[]=with_user_like`,
+        {
+          headers: {
+            Authorization: `Bearer 5|u3hmf4kgfuXMbV0M2c1nSpLvKuiMsOfT7e94tRIC2bf4e27d`,
+          },
+        },
       );
 
       // Laravel retourne souvent { data, meta, links }
       const newItems = res.data.data;
-
       setActulity(prev => [...prev, ...newItems]);
 
       // Vérifier s’il reste des pages
@@ -83,20 +88,24 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
     }
   }, [loading]);
 
-  React.useEffect(() => {
-    // fetch advertissments
-    (async () => {
-      const res = await axios.get<ResponseCollection<AdvertisementResource>>(
-        API_URLS.ADVERTISSEMENTS,
-      );
-      setAdvertissment(res.data.data.length > 0 ? res.data.data[0] : null);
-    })();
+  useFocusEffect(
+    React.useCallback(() => {
+      setAdvertissment(null);
+      setActulity([]);
+      // fetch advertissments
+      (async () => {
+        const res = await axios.get<ResponseCollection<AdvertisementResource>>(
+          API_URLS.ADVERTISSEMENTS,
+        );
+        setAdvertissment(res.data.data.length > 0 ? res.data.data[0] : null);
+      })();
 
-    // fetch actualities
-    (async () => await fetchPublications(1))();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+      // fetch actualities
+      (async () => await fetchPublications(1))();
 
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []),
+  );
   return (
     <>
       {/* Header */}

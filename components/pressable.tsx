@@ -10,11 +10,24 @@ type Props = {
   children: React.ReactNode;
   onPress?: ((event: GestureResponderEvent) => void) | undefined;
   style?: StyleProp<ViewStyle>;
+  onLongPress?: ((event: GestureResponderEvent) => void) | undefined;
+  activeOpacity?: number;
 };
 
-const Pressable: React.FC<Props> = ({ children, onPress, style }) => {
+const Pressable: React.FC<Props> = ({
+  children,
+  onPress,
+  style,
+  onLongPress,
+  activeOpacity,
+}) => {
   return (
-    <TouchableOpacity onPress={onPress} style={style}>
+    <TouchableOpacity
+      onPress={onPress}
+      onLongPress={onLongPress}
+      style={style}
+      activeOpacity={activeOpacity}
+    >
       {children}
     </TouchableOpacity>
   );

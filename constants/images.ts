@@ -23,4 +23,11 @@ export const IMAGES = {
   MAP_PIKER: require('../assets/images/map_piker.png'),
   ICON_CALL: require('../assets/images/icon_call.png'),
   ICON_MEDICINE_2: require('../assets/images/icon_medicine_2.png'),
+  ICON_LIKE: require('../assets/images/icon_like.png'),
+  ICON_LIKED: require('../assets/images/icon_liked.png'),
+  ICON_COMMENT: require('../assets/images/icon_comment.png'),
+  ICON_SHARE: require('../assets/images/icon_share.png'),
+  ICON_HEART: require('../assets/images/icon_heart.png'),
+  ICON_SEND: require('../assets/images/icon_send.png'),
+  ICON_CHEVRON_LEFT: require('../assets/images/icon_chevron_left.png'),
 };

@@ -14,4 +14,5 @@ export const COLORS = {
   primaryLight: '#03BABA38',
   gray_51: '#00000082',
   gray_40: '#555555',
+  gray_20: '#CCCCCC',
 };

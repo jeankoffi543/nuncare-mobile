@@ -22,6 +22,9 @@ import AllPharmaciesScreen from './screens/AllPharmaciesScreen';
 import MapScreen from './screens/MapScreen';
 import AllMedicinesScreen from './screens/AllMedicinesScreen';
 import AllMedicinesInsurancesScreen from './screens/AllMedicinesInsurancesScreen';
+import ActualityScreen from './screens/ActualityScreen';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import CommentEditScreen from './screens/CommentEditScreen';
 
 // import MenuScreen from './screens/MenuScreen';
 
@@ -42,57 +45,72 @@ function App() {
   }
 
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="StartPageOneScreen"
-            component={StartPageOneScreen}
-            options={options.startPageOne}
-          />
-          <Stack.Screen
-            name="StartPageTwoScreen"
-            component={StartPageTwoScreen}
-            options={options.startPageOne}
-          />
-          <Stack.Screen
-            name="MenuScreen"
-            component={MenuScreen}
-            options={options.menu}
-          />
+    // eslint-disable-next-line react-native/no-inline-styles
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Provider store={store}>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="StartPageOneScreen"
+              component={StartPageOneScreen}
+              options={options.startPageOne}
+            />
+            <Stack.Screen
+              name="StartPageTwoScreen"
+              component={StartPageTwoScreen}
+              options={options.startPageOne}
+            />
+            <Stack.Screen
+              name="MenuScreen"
+              component={MenuScreen}
+              options={options.menu}
+            />
 
-          <Stack.Screen
-            name="PharmaciesOnDutyScreen"
-            component={PharmaciesOnDutyScreen}
-            options={options.extraMenu}
-          />
+            <Stack.Screen
+              name="PharmaciesOnDutyScreen"
+              component={PharmaciesOnDutyScreen}
+              options={options.extraMenu}
+            />
 
-          <Stack.Screen
-            name="AllPharmaciesScreen"
-            component={AllPharmaciesScreen}
-            options={options.extraMenu}
-          />
+            <Stack.Screen
+              name="AllPharmaciesScreen"
+              component={AllPharmaciesScreen}
+              options={options.extraMenu}
+            />
 
-          <Stack.Screen
-            name="AllMedicinesScreen"
-            component={AllMedicinesScreen}
-            options={options.extraMenu}
-          />
+            <Stack.Screen
+              name="AllMedicinesScreen"
+              component={AllMedicinesScreen}
+              options={options.extraMenu}
+            />
 
-          <Stack.Screen
-            name="AllMedicinesInsurancesScreen"
-            component={AllMedicinesInsurancesScreen}
-            options={options.extraMenu}
-          />
+            <Stack.Screen
+              name="AllMedicinesInsurancesScreen"
+              component={AllMedicinesInsurancesScreen}
+              options={options.extraMenu}
+            />
 
-          <Stack.Screen
-            name="MapScreen"
-            component={MapScreen}
-            options={options.extraMenu}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </Provider>
+            <Stack.Screen
+              name="MapScreen"
+              component={MapScreen}
+              options={options.extraMenu}
+            />
+
+            <Stack.Screen
+              name="ActualityScreen"
+              component={ActualityScreen}
+              options={options.extraMenu2}
+            />
+
+            <Stack.Screen
+              name="CommentEditScreen"
+              component={CommentEditScreen}
+              options={options.commentEdit}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </Provider>
+    </GestureHandlerRootView>
   );
 }
 
